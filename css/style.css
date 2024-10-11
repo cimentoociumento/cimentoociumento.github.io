@@ -1,0 +1,295 @@
+/* Estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #a1a1a1;
+    padding: 10px 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: #000;
+    font: 2em 'Major Mono Display', monospace;
+}
+
+.logo img {
+    height: 80px;
+    margin-right: 8px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font: 1em 'Michroma', sans-serif;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Conteúdo principal */
+main {
+    flex-grow: 1;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+/* Seção de destaques */
+#destaques {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.carrossel {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border: 4px solid #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+    height: 450px; /* Ajuste conforme necessário */
+    overflow: hidden;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.descricao {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 10;
+}
+
+button.prev:hover, button.next:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+}
+
+button.prev { left: 10px; border-radius: 0 5px 5px 0; }
+button.next { right: 10px; border-radius: 5px 0 0 5px; }
+
+/* Seção de catálogo */
+#catálogo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.title {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+.car-item1, .car-item2, .car-item3 {
+    text-align: center;
+}
+
+/* Seções Sobre Nós e Fundador */
+#sobre-fundador {
+    background-color: #e0e0e0;
+    padding: 40px 0;
+}
+
+.container-mid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sobre-nos, .fundador {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-nos h2, .fundador h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.fundador-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.fundador-content p {
+    flex: 1;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.fundador-content img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Rodapé */
+footer {
+    background-color: #a1a1a1;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.car-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.car-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.btn-comprar, .btn-mostrar-mais {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-mostrar-mais {
+    display: block;
+    margin: 20px auto;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.car-item.hidden {
+    display: none;
+}
+
+.car-item.reveal {
+    animation: slideDown 0.5s ease-out forwards;
+}
+
+#btn-topo {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    border-radius: 8px;
+    transition: 0.3s linear;
+    opacity: 0;
+}
+
+#btn-topo:hover {
+    background-color: #0056b3;
+    transition: 0.3s linear;
+}
+
+#btn-topo.show {
+    display: block;
+    opacity: 1;
+}
+

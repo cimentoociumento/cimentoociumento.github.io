@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket Cars</title>
+    <script src="js/fa.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="imagens/logo.png" alt="Rocket Cars Logo">
+                <span><b>rocket<br>cars</b></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#destaques">Catálogo</a></li>
+                    <li><a href="#catálogo">Sobre nós</a></li>
+                    <li><a href="https://chat.whatsapp.com/GS2pHP1oICbFJ5OyhwpIiL">Contate-nos <i
+                                class="fab fa-whatsapp"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <script>
+            let indice = 0;
+
+            function mudarSlide(direcao) {
+                const slides = document.querySelectorAll('.slide');
+                slides[indice].classList.remove('active');
+
+                indice += direcao;
+
+                if (indice < 0) {
+                    indice = slides.length - 1;
+                } else if (indice >= slides.length) {
+                    indice = 0;
+                }
+
+                slides[indice].classList.add('active');
+                atualizarSlides();
+            }
+
+            function atualizarSlides() {
+                const slides = document.querySelector('.slides');
+                const larguraSlide = slides.clientWidth;
+                slides.style.transform = `translateX(${-indice * larguraSlide}px)`;
+            }
+
+            atualizarSlides();
+        </script>
+        <section id="destaques">
+            <h1>Destaques</h1>
+            <div class="carrossel">
+                <div class="slides">
+                    <div class="slide active">
+                        <img src="imagens/R34.jpg" alt="Nissan Skyline GTR R34" height="350">
+                        <div class="descricao">Nissan Skyline GTR R34.</div>
+                    </div>
+                    <div class="slide">
+                        <img src="imagens/supra.jpg" alt="Toyota Supra" height="350">
+                        <div class="descricao">Toyota Supra.</div>
+                    </div>
+                    <div class="slide">
+                        <img src="imagens/S15.jpg" alt="Nissan Silvia S15" height="350">
+                        <div class="descricao">Nissan Silvia S15.</div>
+                    </div>
+                </div>
+                <button class="prev" onclick="mudarSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+                <button class="next" onclick="mudarSlide(1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section id="catálogo">
+            <div class="title">
+                <h2>Destaques</h2>
+            </div>
+            <div class="car-grid">
+                <div class="car-item">
+                    <img src="imagens/R34.jpg" alt="Nissan Skyline GTR R34">
+                    <p>Nissan Skyline GTR R34</p>
+                    <p>R$ 800.000,00</p>
+                    <a href="javascript:void(0);" onclick="window.alert('Produto indisponível');" class="btn-comprar">Comprar agora</a>
+                </div>
+                <div class="car-item">
+                    <img src="imagens/rx-7.jpg" alt="Mazda RX-7">
+                    <p>Mazda RX-7</p>
+                    <p>R$ 650.000,00</p>
+                    <a href="javascript:void(0);" onclick="window.alert('Produto indisponível');" class="btn-comprar">Comprar agora</a>
+                </div>
+                <div class="car-item">
+                    <img src="imagens/supra.jpg" alt="Toyota Supra">
+                    <p>Toyota Supra</p>
+                    <p>R$ 700.000,00</p>
+                    <a href="javascript:void(0);" onclick="window.alert('Produto indisponível');" class="btn-comprar">Comprar agora</a>
+                </div>
+                <div class="car-item hidden">
+                    <img src="https://placehold.co/400x400" alt="Nissan 350Z">
+                    <p>Nissan 350Z</p>
+                    <p>R$ 450.000,00</p>
+                    <a href="javascript:void(0);" onclick="window.alert('Produto indisponível');" class="btn-comprar">Comprar agora</a>
+                </div>
+                <div class="car-item hidden">
+                    <img src="https://placehold.co/400x400" alt="Toyota AE86">
+                    <p>Toyota AE86</p>
+                    <p>R$ 400.000,00</p>
+                    <a href="javascript:void(0);" onclick="window.alert('Produto indisponível');" class="btn-comprar">Comprar agora</a>
+                </div>
+                <div class="car-item hidden">
+                    <img src="https://placehold.co/400x400" alt="Nissan GT-R R35">
+                    <p>Nissan GT-R R35</p>
+                    <p>R$ 1.200.000,00</p>
+                    <a href="javascript:void(0);" onclick="window.alert('Produto indisponível');" class="btn-comprar">Comprar agora</a>
+                </div>
+            </div>
+            <div class="button-container">
+                <button id="mostrar-mais" class="btn-mostrar-mais">Mostrar mais</button>
+            </div>
+        </section>
+
+        <section id="sobre-fundador">
+            <div class="container-mid">
+                <div class="sobre-nos">
+                    <h2>Sobre Nós</h2>
+                    <p>Nós da Rocket Cars somos uma empresa focada na importação de carros de luxo japoneses, oferecendo
+                        uma
+                        gama de opções fantásticas com modificações de renomadas oficinas no Japão, como Liberty Walk e
+                        Top
+                        Secret. Somos a opção perfeita para entusiastas do mundo automobilístico que desejam ter carros
+                        considerados lendas da cultura japonesa em suas coleções. Temos nossa sede em Concórdia, SC, mas
+                        contamos com revendas em vários estados do Brasil, como SP, MG, DF, MT, MS, BH.</p>
+                </div>
+
+                <div class="fundador">
+                    <h2>Fundador</h2>
+                    <div class="fundador-content">
+                        <p>A Rocket Cars foi fundada em 2008 pelo empresário brasileiro Daniel Silva. Nascido em 1984 em
+                            Blumenal, SC, mudou-se para Concórdia aos 15 anos. Quando tinha 19 anos, comprou seu
+                            primeiro
+                            carro, um Chevrolet Vectra ano 1998. Sempre foi apaixonado por carros e a compra desse
+                            veículo
+                            foi uma realização. Logo após a compra, começou a revender carros de baixo valor até que, em
+                            2008, aos 25 anos, abriu a Rocket Cars e começou a revender esportivos japoneses aqui no
+                            Brasil,
+                            onde tem tido muito sucesso.</p>
+                        <img src="imagens/daniel silva.jpg" alt="Daniel Silva">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Rocket Cars</p>
+        <p>Localização da nossa sede: Concórdia, SC</p>
+    </footer>
+
+    <button id="btn-topo" title="Ir para o topo"><i class="fas fa-arrow-up"></i></button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnTopo = document.getElementById('btn-topo');
+
+            function alternarBtnTopo() {
+                if (window.pageYOffset > 300) {
+                    btnTopo.style.display = 'block';
+                    setTimeout(() => {
+                        btnTopo.classList.add('show');
+                    }, 10);
+                } else {
+                    btnTopo.classList.remove('show');
+                    setTimeout(() => {
+                        btnTopo.style.display = 'none';
+                    }, 300);
+                }
+            }
+
+            alternarBtnTopo();
+
+            window.addEventListener('scroll', alternarBtnTopo);
+
+            btnTopo.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnMostrarMais = document.getElementById('mostrar-mais');
+            const carrosItens = document.querySelectorAll('.car-item.hidden');
+            let carrosVisiveis = 3;
+
+            btnMostrarMais.addEventListener('click', function() {
+                for (let i = carrosVisiveis; i < carrosVisiveis + 3 && i < carrosItens.length + 3; i++) {
+                    if (carrosItens[i - 3]) {
+                        carrosItens[i - 3].classList.remove('hidden');
+                    }
+                }
+
+                carrosVisiveis += 3;
+
+                if (carrosVisiveis >= carrosItens.length + 3) {
+                    btnMostrarMais.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
